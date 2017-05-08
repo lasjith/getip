@@ -3,7 +3,7 @@ collecting the ip of the local machine and storing it to a file
 
 ## Change Log
 04/05/2017
-	ifconfig | grep "inet[^6]" | awk '{print $2}' | head -n1
+	curl ipecho.net/plain
 
-### Version 2.0
+### Version 3.0
 
