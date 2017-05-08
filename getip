@@ -1,12 +1,10 @@
 #!/bin/bash
 
 # getip - collecting ip from local machine to file
-# version 1.0
+# version 2.0
 
-list="text"
-text=""
-mkdir works
-cd works
+mkdir -p tmp
+cd tmp
 echo creating the "file..."
-(hostname -I | awk '{ print $1 }') > text.dat
+ifconfig | grep "inet[^6]" | awk '{print $2}' | head -n1 > text.dat
 echo $(date) >> text.dat
