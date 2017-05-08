@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# getip - collecting ip from local machine to file
+# version 1.0
+
+list="text"
+text=""
+mkdir works
+cd works
+echo creating the "file..."
+(hostname -I | awk '{ print $1 }') > text.dat
+echo $(date) >> text.dat
