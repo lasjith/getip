@@ -6,5 +6,5 @@
 mkdir -p tmp
 cd tmp
 echo creating the "file..."
-curl ipecho.net/plain > text.dat
+curl ipecho.net |grep "Your IP" | awk '{print $4}' | awk -F "<" '{print $1}' > text.dat
 echo $(date) >> text.dat
